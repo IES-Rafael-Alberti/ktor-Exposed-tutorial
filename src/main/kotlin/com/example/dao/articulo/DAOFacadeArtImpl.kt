@@ -1,4 +1,4 @@
-package com.example.dao
+package com.example.dao.articulo
 
 import com.example.models.Article
 import com.example.dao.DatabaseFactory.dbQuery
@@ -7,7 +7,7 @@ import kotlinx.coroutines.runBlocking
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
-class DAOFacadeImpl : DAOFacade {
+class DAOFacadeArtImpl : DAOFacadeArt {
 
     private fun resultRowToArticle(row: ResultRow) = Article(
         id = row[Articles.id],
@@ -46,7 +46,7 @@ class DAOFacadeImpl : DAOFacade {
 
 }
 
-val dao: DAOFacade = DAOFacadeImpl().apply {
+val daoArt: DAOFacadeArt = DAOFacadeArtImpl().apply {
     runBlocking {
         if(allArticles().isEmpty()) {
             addNewArticle("The drive to develop!", "...it's what keeps me going.")

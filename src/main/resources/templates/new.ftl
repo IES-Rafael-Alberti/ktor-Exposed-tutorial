@@ -1,17 +1,17 @@
+<#-- @ftlvariable name="article" type="com.example.models.Article" -->
 <#import "_layout.ftl" as layout />
 <@layout.header>
     <div>
-        <h3>Create article</h3>
-        <form action="/articles" method="post">
-            <p>
-                <input type="text" name="title">
-            </p>
-            <p>
-                <textarea name="body"></textarea>
-            </p>
-            <p>
-                <input type="submit">
-            </p>
-        </form>
+        <h3>Create campo</h3>
+        <h3>
+            ${article.title}
+        </h3>
+        <p>
+            ${article.body}
+        </p>
+        <hr>
+        <p>
+            <a href="/articles/${article.id}/edit">Edit article</a>
+        </p>
     </div>
 </@layout.header>

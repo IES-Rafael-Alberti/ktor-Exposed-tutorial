@@ -5,6 +5,9 @@ import freemarker.core.*
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
 
+/**
+ * Carga las plantillas guardadas en Templates
+ */
 fun Application.configureTemplating() {
     install(FreeMarker) {
         templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
